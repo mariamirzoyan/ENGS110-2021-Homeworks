@@ -14,7 +14,6 @@ def prime (number):
 		for i in range(2,number):
 			if (number % i) == 0:
 				print(number,"is not a prime number")
-				print(i,"times",number//i,"is",number)
 				break
 		else:
 			print(number,"is a prime number")
@@ -23,19 +22,18 @@ def prime (number):
 
 def toBinary(number):
 	binary = [0,0,0,0,0,0,0,0]
-	i = len(binary)-1
-	print(binary[i])
+	i = 7
 	while(number > 0):
 		binary[i] = number%2
-		i-=1
+		i = i - 1
 		number = int(number/2)
 	print(binary)
 def main():
-	N = int(input("Please type your age: "))
+	N = int(input("Please type a number: "))
 	fibsum(N)
 	prime(N)
 	toBinary(N)
-	print("Done")
+	print("The End")
 
 
 main()
