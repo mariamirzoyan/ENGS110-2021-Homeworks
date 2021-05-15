@@ -1,46 +1,43 @@
-#include <stdio.h>
+#include <stdio.h> 
 int fibonacci(int age)
 {
-	if (age == 0)
-		{
-		return(0);
-		}
-
-	int n1 = 0;
-	int n2 = 1;
-	int sum = 2;
-	int b = 0;
-	while (n2 < age)
+	int N1 = 0;
+	int N2 = 1;
+	int Sum =0;
+	int n = 0;
+	while (N2 < age)
 	{
-		b = n1;
-		n1 = n2;
-		n2 = b + n2;
-		sum = sum + n2;
+		Sum = Sum + N2;
+		n = N2;
+		N2 = N1 + N2;
+		N1 = n;
 	}
-	printf("The sum of all fibonacci numbers less than your age = %d/n",sum);
-	return sum;
+	printf("The sum of all fibonacci numbers less than your age = %d\n",Sum);
+	return Sum;
 }
 void binary(int num)
 {
 	int c;
-	scanf("%d", &num);
-	int b = 32;
-	while(b >= 0)
+	printf("\nThe binary representation of sum is ");
+	int n = 16;
+	while(n >= 0)
     {
-        c = num >> b;
+        c = num >> n;
         if(c & 1)
-            printf("1");
-        else
-            printf("0");
-        b--;
-    }
+		printf("1");
+	else
+		printf("0");
+	n--;
+	}
+	printf("\n");
 }
-
 int main()
 {
         int age;
 	printf("please insert your age :");
+	scanf("%d",&age);
 	binary(fibonacci(age));
-	fibonacci(age);
+	printf("\n");
+	return age;
 
 } 
